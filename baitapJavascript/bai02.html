@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính tuổi</title>
+</head>
+<body>
+    <h2>Tính tuổi</h2>
+
+    <input type="number" id="namsinh" placeholder="Nhập năm sinh">
+    <br><br>
+
+    <button onclick="tinhTuoi()">Tính tuổi</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function tinhTuoi() {
+            let namsinh = Number(document.getElementById("namsinh").value);
+            let namhientai = new Date().getFullYear();
+            let tuoi = namhientai - namsinh;
+
+            document.getElementById("ketqua").innerHTML = "Tuổi của bạn là: " + tuoi;
+        }
+    </script>
+</body>
+</html>

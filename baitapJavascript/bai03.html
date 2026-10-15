@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Xếp loại học lực</title>
+</head>
+<body>
+    <h2>Xếp loại học lực</h2>
+
+    <input type="number" id="diem" placeholder="Nhập điểm (0-100)">
+    <br><br>
+
+    <button onclick="xepLoai()">Xếp loại</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function xepLoai() {
+            let diem = Number(document.getElementById("diem").value);
+            let xeploai;
+
+            if (diem < 0 || diem > 100) {
+                xeploai = "Điểm không hợp lệ";
+            } else if (diem >= 90) {
+                xeploai = "Loại A";
+            } else if (diem >= 80) {
+                xeploai = "Loại B";
+            } else if (diem >= 70) {
+                xeploai = "Loại C";
+            } else if (diem >= 60) {
+                xeploai = "Loại D";
+            } else {
+                xeploai = "Loại F";
+            }
+
+            document.getElementById("ketqua").innerHTML = xeploai;
+        }
+    </script>
+</body>
+</html>

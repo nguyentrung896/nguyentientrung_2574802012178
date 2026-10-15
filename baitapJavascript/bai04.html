@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Máy tính tình yêu</title>
+</head>
+<body>
+    <h2>Máy tính tình yêu</h2>
+
+    <input type="text" id="ten1" placeholder="Nhập tên của bạn">
+    <br><br>
+
+    <input type="text" id="ten2" placeholder="Nhập tên người ấy">
+    <br><br>
+
+    <button onclick="kiemTra()">Tính tỷ lệ</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTra() {
+            let ten1 = document.getElementById("ten1").value;
+            let ten2 = document.getElementById("ten2").value;
+            let tile = Math.floor(Math.random() * 100) + 1;
+            let thongbao;
+
+            if (ten1 == "" || ten2 == "") {
+                document.getElementById("ketqua").innerHTML = "Vui lòng nhập đầy đủ tên!";
+                return;
+            }
+
+            if (tile >= 80) {
+                thongbao = "Rất hợp nhau";
+            } else if (tile >= 50) {
+                thongbao = "Khá hợp nhau";
+            } else {
+                thongbao = "Cần tìm hiểu nhau nhiều hơn";
+            }
+
+            document.getElementById("ketqua").innerHTML =
+                ten1 + " và " + ten2 + " có tỷ lệ phù hợp: " + tile + "%<br>" + thongbao;
+        }
+    </script>
+</body>
+</html>

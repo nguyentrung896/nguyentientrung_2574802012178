@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kiểm tra số chẵn lẻ</title>
+</head>
+<body>
+    <h2>Kiểm tra số chẵn - số lẻ</h2>
+
+    <input type="number" id="so" placeholder="Nhập số nguyên">
+    <br><br>
+
+    <button onclick="kiemTra()">Kiểm tra</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTra() {
+            let so = Number(document.getElementById("so").value);
+
+            if (so % 2 == 0) {
+                document.getElementById("ketqua").innerHTML = "Số chẵn";
+            } else {
+                document.getElementById("ketqua").innerHTML = "Số lẻ";
+            }
+        }
+    </script>
+</body>
+</html>

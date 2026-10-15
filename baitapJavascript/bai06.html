@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trò chơi Oẳn tù tì</title>
+</head>
+<body>
+    <h2>Trò chơi Oẳn tù tì</h2>
+
+    <button onclick="choi('Búa')">Búa</button>
+    <button onclick="choi('Bao')">Bao</button>
+    <button onclick="choi('Kéo')">Kéo</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function choi(nguoi) {
+            let luaChon = ["Búa", "Bao", "Kéo"];
+            let may = luaChon[Math.floor(Math.random() * 3)];
+            let ketqua;
+
+            if (nguoi == may) {
+                ketqua = "Hòa";
+            } else if (
+                (nguoi == "Búa" && may == "Kéo") ||
+                (nguoi == "Bao" && may == "Búa") ||
+                (nguoi == "Kéo" && may == "Bao")
+            ) {
+                ketqua = "Bạn thắng";
+            } else {
+                ketqua = "Bạn thua";
+            }
+
+            document.getElementById("ketqua").innerHTML =
+                "Bạn chọn: " + nguoi + "<br>" +
+                "Máy chọn: " + may + "<br>" +
+                "Kết quả: " + ketqua;
+        }
+    </script>
+</body>
+</html>
